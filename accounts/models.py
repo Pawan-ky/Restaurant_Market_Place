@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-from django.db.models.fields.related import ForeignKey, OneToOneField
-from django.db.models.signals import post_save, pre_save
-from django.dispatch import receiver
+from django.db.models.fields.related import OneToOneField
 
 class UserManger(BaseUserManager):
     def create_user(self,first_name, last_name, username, email, password=None):
@@ -41,11 +39,11 @@ class UserManger(BaseUserManager):
 
 class User(AbstractBaseUser):
     
-    RESTAIRANT = 1
-    CUSTOMER = 2
+    CUSTOMER = 1
+    VENDOR = 2
     ROLE_CHOICE = (
-        (RESTAIRANT, 'Restaurant'),
-        (CUSTOMER, 'Customer')
+        (CUSTOMER, 'Customer'),
+        (VENDOR, 'Vendor')        
     )
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
