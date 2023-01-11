@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>
+    Welcome {{user.username}}, this is vendor dashboard
+    
+</h2>
+<p>this is {{user.get_role}}</p>
+{% endblock %}
