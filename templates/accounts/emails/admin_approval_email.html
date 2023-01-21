@@ -1,0 +1,11 @@
+{% autoescape off %}
+ 
+Hi {{user.first_name}},
+
+{% if is_approved%}
+Congratulations!! you account has been approved by our admin team. --foodOnline
+{% else %}
+We are sorry!! you account is not approved, for more details please contact - support@foodOnline.com
+{% endif %}
+
+{% endautoescape %}

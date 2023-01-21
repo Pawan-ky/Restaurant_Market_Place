@@ -7,7 +7,6 @@ def post_save_create_profile_receiver(sender, instance, created, **kwargs ):
     # this signal gets activates just after user is created
     if created:
         UserProfile.objects.create(user=instance)
-        print("user profile created")
     else:
         try:
             profile = UserProfile.objects.get(user=instance)
